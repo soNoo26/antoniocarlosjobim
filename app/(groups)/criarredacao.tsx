@@ -43,11 +43,19 @@ export default function NovoModelo() {
     };
 
     const handleEditClick = async () => {
+        // Verifica se o título ou texto estão vazios
+        if (!titulo.trim() || !texto.trim()) {
+            Platform.OS === 'web' 
+                ? window.alert('A redação não pode estar vazia')
+                : Alert.alert('A redação não pode estar vazia');
+            return; // Impede a execução do salvamento
+        }
+    
         try {
             const existingData = await AsyncStorage.getItem('redacoes');
             const redacoes = existingData ? JSON.parse(existingData) : [];
             redacoes.push({ id: Math.random().toString(36).substr(2, 9), titulo, texto });
-
+    
             await AsyncStorage.setItem('redacoes', JSON.stringify(redacoes));
             Alert.alert('Salvo', 'Sua redação foi salva com sucesso!');
             router.push('/(groups)');
