@@ -162,6 +162,7 @@ const Title = styled.View`
     align-items: center;
     margin-bottom: 20px;
     margin-top: -8%;
+    margin-right: 80%;
 `;
 
 const TitleText = styled.Text`
@@ -202,16 +203,20 @@ const EmptyText = styled.Text`
     font-size: 18px;
     color: #999;
     margin-top: 50%;
-    margin-right: 20%;
-    margin-left: -10%;
+    margin-left: 0%;
+
+
 `;
 
 const Container = styled.View`
     flex: 1;
     background-color: #F5F5F5;
     padding: 16px;
-    align-items: start;
-    margin-top: 50px;
+    align-items: center;
+    margin-top: 0%;
+    margin-left: 0%;
+
+    min-width: 100%;
 `;
 
 const Footer = styled.View`
@@ -271,11 +276,13 @@ const DownloadButton = styled.Pressable`
 
 
 const FooterImage = styled.Image`
-  width: 20%;
+  min-width: 20%;
   height: 20%;
   margin-bottom: 20px;
-  margin-left: 80%;
-  margin-top: -4%;
+  margin-left: 75%;
+  margin-top: 5%;
+
+  max-width: 25%;
 `;
 
 
